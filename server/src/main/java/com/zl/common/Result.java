@@ -1,4 +1,4 @@
-package com.zl.domain;
+package com.zl.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +12,8 @@ public class Result {
     private String message;
     private Object data;
     private Long total = 0L;
+
+    public static final Result DATA_FORMAT_ERROR = new Result(-1,"数据格式错误");
 
     public Result(Integer code, String message) {
         this.code = code;

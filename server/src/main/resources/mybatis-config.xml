@@ -14,5 +14,7 @@
 
     <mappers>
         <mapper resource="static/UserMapper.xml"/>
+        <mapper resource="static/SizeMapper.xml"/>
+        <mapper resource="static/GoodsMapper.xml"/>
     </mappers>
 </configuration>

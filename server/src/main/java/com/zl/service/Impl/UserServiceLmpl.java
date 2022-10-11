@@ -1,6 +1,6 @@
 package com.zl.service.Impl;
 
-import com.zl.domain.Result;
+import com.zl.common.Result;
 import com.zl.dto.UserDto;
 import com.zl.mapper.UserMapper;
 import com.zl.service.UserService;

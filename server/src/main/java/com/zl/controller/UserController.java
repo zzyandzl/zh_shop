@@ -1,6 +1,6 @@
 package com.zl.controller;
 
-import com.zl.domain.Result;
+import com.zl.common.Result;
 import com.zl.dto.UserDto;
 import com.zl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

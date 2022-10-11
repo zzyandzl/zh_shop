@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class UserDto extends BaseDto{
 
     @NotNull(message = "请输入名称")
     private String username;
