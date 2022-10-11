@@ -4,6 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zl.mapper.SortMapper">
 
+    <resultMap id="SortResultMap" type="com.zl.domain.Sort">
+        <id property="id" column="sort_id"/>
+        <result property="sortName" column="sort_name"/>
+    </resultMap>
+
     <insert id="saveSort" parameterType="Sort" >
         insert into sort(sort_id,sort_name)
         values (#{id},#{sortName})
@@ -29,15 +34,15 @@
         </where>
     </update>
 
-    <select id="selectOneSortByName" parameterType="String" resultType="Sort">
+    <select id="selectOneSortByName" parameterType="String"  resultMap="SortResultMap">
         select * from sort where  sort_name=#{sortName};
     </select>
 
-    <select id="selectOneSortById" parameterType="String" resultType="Sort">
+    <select id="selectOneSortById" parameterType="Integer" resultMap="SortResultMap">
         select * from sort where  sort_id=#{id};
     </select>
 
-    <select id="selectAllSort" resultType="Sort">
+    <select id="selectAllSort" resultType="Sort" resultMap="SortResultMap">
         select * from sort
     </select>
 
