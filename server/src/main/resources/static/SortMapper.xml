@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zl.mapper.SortMapper">
+
+    <insert id="saveSort" parameterType="Sort" >
+        insert into sort(sort_id,sort_name)
+        values (#{id},#{sortName})
+    </insert>
+
+    <delete id="deleteOneSortById" parameterType="int">
+        delete from sort where sort_id=#{id}
+    </delete>
+
+    <delete id="deleteManySortById" parameterType="String">
+        delete from sort where sort_id in  (${arg0})
+    </delete>
+    
+    <update id="updateSort" parameterType="Sort" >
+        update sort
+        <set>
+            <if test="sortName!=null and sortName!=''">
+                 sort_name=#{sortName}
+            </if>
+        </set>
+        <where>
+            sort_id=#{id}
+        </where>
+    </update>
+
+    <select id="selectOneSortByName" parameterType="String" resultType="Sort">
+        select * from sort where  sort_name=#{sortName};
+    </select>
+
+    <select id="selectOneSortById" parameterType="String" resultType="Sort">
+        select * from sort where  sort_id=#{id};
+    </select>
+
+    <select id="selectAllSort" resultType="Sort">
+        select * from sort
+    </select>
+
+
+</mapper>
